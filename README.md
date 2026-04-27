@@ -28,7 +28,12 @@ Built a CI pipeline using Jenkins running on a DigitalOcean droplet with Docker.
 - Status: PASSED
 
 ## Screenshots
-(Add your screenshots here)
+
+### Jenkins Pipeline Success
+![Pipeline](screenshots/jenkins-success.png)
+
+### Console Output
+![Console](screenshots/console-output.png)
 
 ## How to run locally
 pip install -r requirements.txt
