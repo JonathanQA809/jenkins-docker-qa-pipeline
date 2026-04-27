@@ -1,21 +1,33 @@
 
 pipeline {
-    agent {
-        docker {
-            image 'python:3.12-slim'
-        }
-    }
+    agent any
 
     stages {
-        stage('Install') {
+        stage('Install Python Tools') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh '''
+                    apt-get update
+                    apt-get install -y python3 python3-pip python3-venv
+                '''
             }
         }
 
-        stage('Test') {
+        stage('Install Dependencies') {
             steps {
-                sh 'pytest'
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    pytest
+                '''
             }
         }
     }
