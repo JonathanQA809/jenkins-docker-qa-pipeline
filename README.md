@@ -24,13 +24,15 @@ Built a CI pipeline using Jenkins running on a DigitalOcean droplet with Docker.
 2. Build Docker test image
 3. Run pytest test suite inside the container
 
-## Sample Test Result
-- 2 tests executed
-- Status: PASSED
+## Test Results
+- Pytest executed successfully
+- Selenium test ran in headless Chromium browser
+- Pipeline Status: SUCCESS
 
 ## Screenshots
 
 ### Jenkins Pipeline Success
+![Pipeline](screenshots/jonathan-qa-pipeline.png)
 ![Pipeline](screenshots/jenkins-success.png)
 
 ### Console Output
