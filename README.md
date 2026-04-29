@@ -32,10 +32,10 @@ Built a CI pipeline using Jenkins running on a DigitalOcean droplet with Docker.
 ## Screenshots
 
 ### Jenkins Pipeline Success
-![Pipeline](screenshots/jonathan-qa-pipeline.png)
 ![Pipeline](screenshots/jenkins-success.png)
 
 ### Console Output
+![Console](screenshots/jonathan-qa-pipeline.png)
 ![Console](screenshots/console-output.png)
 
 ## How to run locally
