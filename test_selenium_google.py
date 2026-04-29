@@ -1,18 +1,8 @@
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from pages.google_home_page import GoogleHomePage
 
 
-def test_google_title():
-    options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
+def test_google_title(driver):
+    google_home_page = GoogleHomePage(driver).open().wait_until_loaded()
 
-    driver = webdriver.Chrome(options=options)
-
-    try:
-        driver.get("https://www.google.com")
-        assert "Google" in driver.title
-    finally:
-        driver.quit()
+    assert "Google" in google_home_page.title

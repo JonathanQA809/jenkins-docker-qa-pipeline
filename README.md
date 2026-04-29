@@ -8,23 +8,24 @@ Built a CI pipeline using Jenkins running on a DigitalOcean droplet with Docker.
 - DigitalOcean (Cloud)
 - Python
 - pytest
+- Selenium
+- Google Chrome
 - GitHub
 
 ## What this project does
 - Deploys Jenkins on a cloud server using Docker
 - Connects Jenkins to a GitHub repository
-- Installs dependencies in a virtual environment
-- Executes automated tests using pytest
+- Builds a Docker image with Python, pytest, Selenium, and Chrome
+- Executes automated browser tests using pytest
 - Displays test results in Jenkins console output
 
 ## Pipeline Stages
 1. Checkout code from GitHub
-2. Create Python virtual environment
-3. Install dependencies
-4. Run pytest test suite
+2. Build Docker test image
+3. Run pytest test suite inside the container
 
 ## Sample Test Result
-- 1 test executed
+- 2 tests executed
 - Status: PASSED
 
 ## Screenshots
@@ -36,5 +37,16 @@ Built a CI pipeline using Jenkins running on a DigitalOcean droplet with Docker.
 ![Console](screenshots/console-output.png)
 
 ## How to run locally
+Install dependencies and run tests directly:
+
+```bash
 pip install -r requirements.txt
 pytest
+```
+
+Or run the same Docker flow used by Jenkins:
+
+```bash
+docker build -t jenkins-docker-qa-pipeline .
+docker run --rm jenkins-docker-qa-pipeline
+```
