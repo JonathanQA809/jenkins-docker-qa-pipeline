@@ -3,15 +3,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Test Image') {
+        stage('Install Dependencies') {
             steps {
-                sh 'docker build -t jenkins-docker-qa-pipeline .'
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt
+                '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'docker run --rm jenkins-docker-qa-pipeline'
+                sh '''
+                    . venv/bin/activate
+                    pytest
+                '''
             }
         }
     }
