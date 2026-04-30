@@ -25,8 +25,10 @@ Built a CI pipeline using Jenkins running on a DigitalOcean droplet with Docker.
 3. Run pytest test suite inside the container
 
 ## Test Results
-- Pytest executed successfully
-- Selenium test ran in headless Chromium browser
+
+- MySQL connection test: PASSED
+- Pytest sample test: PASSED
+- Selenium headless browser test: PASSED
 - Pipeline Status: SUCCESS
 
 ## Screenshots
