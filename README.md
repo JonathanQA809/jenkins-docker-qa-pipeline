@@ -1,6 +1,6 @@
 # Jenkins Docker QA Pipeline
 
-Built a CI pipeline using Jenkins running on a DigitalOcean droplet with Docker. The pipeline pulls code from GitHub and runs Python tests using pytest.
+Built a CI pipeline using Jenkins with Docker, Selenium, pytest, and MySQL tests on DigitalOcean
 
 ## Tech Stack
 - Jenkins
